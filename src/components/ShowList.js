@@ -24,12 +24,23 @@ const weekDays = [
 class ShowList extends React.Component {
   state = {
     tvList: [],
+    filteredSeries: [],
   };
   updateTVList = (newList) => {
     this.setState({ tvList: newList });
   };
-  handleDay = (day) => {
+
+  filterDay = (day) => {
     console.log(day);
+
+    const filtered = this.state.tvList.filter((el) => {
+      return !el.show.schedule.days.indexOf(day);
+    });
+    console.log(filtered);
+
+    this.setState({
+      filteredSeries: [...filtered],
+    });
   };
 
   render() {
@@ -42,7 +53,7 @@ class ShowList extends React.Component {
           color='primary'
           aria-label='contained primary button group'>
           {weekDays.map((day) => (
-            <Button key={day} onClick={() => this.handleDay(day)}>
+            <Button key={day} onClick={() => this.filterDay(day)}>
               {day}
             </Button>
           ))}
