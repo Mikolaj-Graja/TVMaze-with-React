@@ -19,20 +19,25 @@ class Search extends React.Component {
       .catch((err) => console.log(`fetch error ${err}`));
     e.preventDefault();
   };
-
   render() {
     return (
-      <div>
+      <form action='submit' onSubmit={this.handleSubmit}>
         <TextField
           id='outlined-basic'
           label='TV Show'
           variant='outlined'
           onChange={this.handleInput}
         />
-        <Button variant='contained' color='primary' onClick={this.handleSubmit}>
-          Search
-        </Button>
-      </div>
+        <div className='btn-container'>
+          <Button
+            className='btn'
+            variant='outlined'
+            color='primary'
+            onClick={this.handleSubmit}>
+            Search
+          </Button>
+        </div>
+      </form>
     );
   }
 }

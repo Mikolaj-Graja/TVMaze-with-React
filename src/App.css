@@ -2,6 +2,7 @@
   text-align: center;
 }
 
-ul {
-  list-style-type: none;
+.btn-container {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }

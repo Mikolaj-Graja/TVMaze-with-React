@@ -8,7 +8,19 @@ import {
   TableCell,
   TableBody,
   Paper,
+  Button,
+  ButtonGroup,
 } from '@material-ui/core';
+
+const weekDays = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+];
 class ShowList extends React.Component {
   state = {
     tvList: [],
@@ -16,10 +28,26 @@ class ShowList extends React.Component {
   updateTVList = (newList) => {
     this.setState({ tvList: newList });
   };
+  handleDay = (day) => {
+    console.log(day);
+  };
+
   render() {
     return (
       <div>
         <Search updateTVList={this.updateTVList} />
+
+        <ButtonGroup
+          variant='contained'
+          color='primary'
+          aria-label='contained primary button group'>
+          {weekDays.map((day) => (
+            <Button key={day} onClick={() => this.handleDay(day)}>
+              {day}
+            </Button>
+          ))}
+        </ButtonGroup>
+
         <TableContainer component={Paper}>
           <Table aria-label='simple table'>
             <TableHead>
@@ -28,6 +56,7 @@ class ShowList extends React.Component {
                 <TableCell align='right'>Title</TableCell>
                 <TableCell align='right'>Genres</TableCell>
                 <TableCell align='right'>Date of premiere</TableCell>
+                <TableCell align='right'>Schedule - days</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -38,9 +67,12 @@ class ShowList extends React.Component {
                   </TableCell>
                   <TableCell align='right'>{series.show.name}</TableCell>
                   <TableCell align='right'>
-                    {series.show.genres.map((genre) => `${genre},`)}
+                    {series.show.genres.map((genre) => `${genre}, `)}
                   </TableCell>
                   <TableCell align='right'>{series.show.premiered}</TableCell>
+                  <TableCell align='right'>
+                    {series.show.schedule.days.map((day) => `${day}, `)}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
