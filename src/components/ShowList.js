@@ -27,7 +27,7 @@ class ShowList extends React.Component {
     filteredSeries: [],
   };
   updateTVList = (newList) => {
-    this.setState({ tvList: newList });
+    this.setState({ tvList: newList, filteredSeries: newList });
   };
 
   filterDay = (day) => {
@@ -47,7 +47,6 @@ class ShowList extends React.Component {
     return (
       <div>
         <Search updateTVList={this.updateTVList} />
-
         <ButtonGroup
           variant='contained'
           color='primary'
@@ -71,7 +70,7 @@ class ShowList extends React.Component {
               </TableRow>
             </TableHead>
             <TableBody>
-              {this.state.tvList.map((series) => (
+              {this.state.filteredSeries.map((series) => (
                 <TableRow key={series.show.id}>
                   <TableCell component='th' scope='row'>
                     {series.score}
