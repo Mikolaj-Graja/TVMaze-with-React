@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
+import Header from './components/Header';
+// import { Typography } from '@material-ui/core';
+import ShowList from './components/ShowList';
 
 function App() {
   return (
     <div className='App'>
-      <header>
-        <h1>Shows from TVMaze</h1>
-      </header>
+      <Header />
+      <ShowList />
     </div>
   );
 }
