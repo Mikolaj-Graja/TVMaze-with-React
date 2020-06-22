@@ -1,14 +1,19 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header';
-// import { Typography } from '@material-ui/core';
 import ShowList from './components/ShowList';
-
+import MoreDetails from './components/MoreDetails';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <ShowList />
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route path='/' component={ShowList} exact />
+          <Route path='/moreInfo' component={MoreDetails} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

@@ -27,6 +27,7 @@ class Search extends React.Component {
           label='TV Show'
           variant='outlined'
           onChange={this.handleInput}
+          value={this.state.tvName}
         />
         <div className='btn-container'>
           <Button

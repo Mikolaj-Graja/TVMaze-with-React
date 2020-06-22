@@ -73,15 +73,23 @@ class ShowList extends React.Component {
               {this.state.filteredSeries.map((series) => (
                 <TableRow key={series.show.id}>
                   <TableCell component='th' scope='row'>
-                    {series.score}
+                    <a href='/moreInfo'>{series.score}</a>
                   </TableCell>
-                  <TableCell align='right'>{series.show.name}</TableCell>
                   <TableCell align='right'>
-                    {series.show.genres.map((genre) => `${genre}, `)}
+                    <a href='/moreInfo'>{series.show.name}</a>
                   </TableCell>
-                  <TableCell align='right'>{series.show.premiered}</TableCell>
                   <TableCell align='right'>
-                    {series.show.schedule.days.map((day) => `${day}, `)}
+                    <a href='/moreInfo'>
+                      {series.show.genres.map((genre) => `${genre}, `)}
+                    </a>
+                  </TableCell>
+                  <TableCell align='right'>
+                    <a href='/moreInfo'>{series.show.premiered}</a>
+                  </TableCell>
+                  <TableCell align='right'>
+                    <a href='/moreInfo'>
+                      {series.show.schedule.days.map((day) => `${day}, `)}
+                    </a>
                   </TableCell>
                 </TableRow>
               ))}
