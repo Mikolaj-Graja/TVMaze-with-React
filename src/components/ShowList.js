@@ -1,5 +1,6 @@
 import React from 'react';
 import Search from './Search';
+import MoreDetails from './MoreDetails';
 import {
   TableContainer,
   Table,
@@ -25,6 +26,8 @@ class ShowList extends React.Component {
   state = {
     tvList: [],
     filteredSeries: [],
+    infoActive: false,
+    series: {},
   };
   updateTVList = (newList) => {
     this.setState({ tvList: newList, filteredSeries: newList });
@@ -42,10 +45,21 @@ class ShowList extends React.Component {
       filteredSeries: [...filtered],
     });
   };
+  moreInfo = (series) => {
+    this.setState({ infoActive: true, series: series });
+  };
+  closeDetails = () => {
+    this.setState({ infoActive: false });
+  };
 
   render() {
     return (
       <div>
+        <MoreDetails
+          infoActive={this.state.infoActive}
+          series={this.state.series}
+          handleClosing={this.closeDetails}
+        />
         <Search updateTVList={this.updateTVList} />
         <ButtonGroup
           variant='contained'
@@ -71,25 +85,20 @@ class ShowList extends React.Component {
             </TableHead>
             <TableBody>
               {this.state.filteredSeries.map((series) => (
-                <TableRow key={series.show.id}>
+                <TableRow
+                  className='pointer'
+                  key={series.show.id}
+                  onClick={() => this.moreInfo(series)}>
                   <TableCell component='th' scope='row'>
-                    <a href='/moreInfo'>{series.score}</a>
+                    {series.score}
                   </TableCell>
+                  <TableCell align='right'>{series.show.name}</TableCell>
                   <TableCell align='right'>
-                    <a href='/moreInfo'>{series.show.name}</a>
+                    {series.show.genres.map((genre) => `${genre}, `)}
                   </TableCell>
+                  <TableCell align='right'>{series.show.premiered}</TableCell>
                   <TableCell align='right'>
-                    <a href='/moreInfo'>
-                      {series.show.genres.map((genre) => `${genre}, `)}
-                    </a>
-                  </TableCell>
-                  <TableCell align='right'>
-                    <a href='/moreInfo'>{series.show.premiered}</a>
-                  </TableCell>
-                  <TableCell align='right'>
-                    <a href='/moreInfo'>
-                      {series.show.schedule.days.map((day) => `${day}, `)}
-                    </a>
+                    {series.show.schedule.days.map((day) => `${day}, `)}
                   </TableCell>
                 </TableRow>
               ))}
