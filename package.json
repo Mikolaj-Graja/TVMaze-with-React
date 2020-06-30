@@ -2,7 +2,7 @@
   "name": "react_tvmaze",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Mikolaj-Graja/TVMaze-with-React",
+  "homepage": "https://mikolaj-graja.github.io/TVMaze-with-React/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
