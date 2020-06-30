@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/TVMaze-with-React/static/css/main.b0f15c45.chunk.css",
-    "main.js": "/TVMaze-with-React/static/js/main.5b229ee0.chunk.js",
-    "main.js.map": "/TVMaze-with-React/static/js/main.5b229ee0.chunk.js.map",
+    "main.js": "/TVMaze-with-React/static/js/main.a3bd6a15.chunk.js",
+    "main.js.map": "/TVMaze-with-React/static/js/main.a3bd6a15.chunk.js.map",
     "runtime-main.js": "/TVMaze-with-React/static/js/runtime-main.797e4288.js",
     "runtime-main.js.map": "/TVMaze-with-React/static/js/runtime-main.797e4288.js.map",
     "static/js/2.da37e43e.chunk.js": "/TVMaze-with-React/static/js/2.da37e43e.chunk.js",
     "static/js/2.da37e43e.chunk.js.map": "/TVMaze-with-React/static/js/2.da37e43e.chunk.js.map",
     "index.html": "/TVMaze-with-React/index.html",
-    "precache-manifest.9d09cb7f646281a4e63300ae5c291601.js": "/TVMaze-with-React/precache-manifest.9d09cb7f646281a4e63300ae5c291601.js",
+    "precache-manifest.3838c6e442c55aa873766c911a5e66c4.js": "/TVMaze-with-React/precache-manifest.3838c6e442c55aa873766c911a5e66c4.js",
     "service-worker.js": "/TVMaze-with-React/service-worker.js",
     "static/css/main.b0f15c45.chunk.css.map": "/TVMaze-with-React/static/css/main.b0f15c45.chunk.css.map",
     "static/js/2.da37e43e.chunk.js.LICENSE.txt": "/TVMaze-with-React/static/js/2.da37e43e.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.797e4288.js",
     "static/js/2.da37e43e.chunk.js",
     "static/css/main.b0f15c45.chunk.css",
-    "static/js/main.5b229ee0.chunk.js"
+    "static/js/main.a3bd6a15.chunk.js"
   ]
 }
