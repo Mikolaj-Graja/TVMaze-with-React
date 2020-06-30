@@ -10,7 +10,7 @@ class Search extends React.Component {
     this.setState({ tvName: event.target.value });
   };
   handleSubmit = (e) => {
-    fetch(`http://api.tvmaze.com/search/shows?q=${this.state.tvName}`)
+    fetch(`https://api.tvmaze.com/search/shows?q=${this.state.tvName}`)
       .then((respone) => respone.json())
       .then((data) => {
         this.setState({ tvList: data });
